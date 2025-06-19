@@ -1,0 +1,165 @@
+body {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(bg-web9.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 420px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(81, 52, 225, 0.963);
+    border: 3px solid rgba(255, 255, 255, 0.2); /* FIXED */
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.login-container h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+.login-container .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgb(248, 240, 240);
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px;
+}
+
+.input-box input::placeholder {
+    color: white;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.login-container .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.login-container label input {
+    accent-color: white;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: white;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-container .login-btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.login-container .login-btn:hover {
+    font-size: 1.2em;
+}
+
+.login-container .login-btn:active {
+    color: rgb(12, 133, 204);
+    font-size: 1.3em;
+}
+
+.login-container .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+.instead p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Phones (up to 600px) */
+@media (max-width: 600px) {
+    .login-container {
+      width: 95%;
+      padding: 30px;
+      margin: auto;
+    }
+  }
+  
+  /* Tablets (601px - 900px) */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .login-container{
+        width: none;
+        padding: 40px;
+        margin: auto;
+    }
+  }
+  
+  /* Large Screens (901px and up) */
+  @media (min-width: 901px) {
+    .login-container {
+        width: none;
+    }
+  }
+  

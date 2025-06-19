@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Work</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Required Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Flowbite for dropdowns -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</head>
+<body class="bg-[#fdf9f8] text-gray-800 font-sans">
+<nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" id="mobile-menu-button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed -->
+                        <svg class="block h-6 w-6" id="menu-closed-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <!-- Icon when menu is open -->
+                        <svg class="hidden h-6 w-6" id="menu-open-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <!-- <div class="flex shrink-0 items-center">
+                        <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                    </div> -->
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="index.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
+                            <a href="dashboards.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboards</a>
+                            <a href="comp_ourwork.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Our Work</a>
+                            <a href="comp_reviews.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reviews</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">View notifications</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                        </svg>
+                    </button>
+
+                    <!-- Profile dropdown -->
+                    <div class="relative ml-3">
+                        <div>
+                            <button type="button" id="user-menu-button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-expanded="false" aria-haspopup="true">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Open user menu</span>
+                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </button>
+                        </div>
+
+                        <!-- Dropdown menu -->
+                        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" id="user-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            <a href="comp_profile.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                            <a href="comp_register.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Register</a>
+                            <a href="comp_login.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="index.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+                <a href="dashboards.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
+                <a href="comp_ourwork.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Our Work</a>
+                <a href="comp_reviews.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+
+  <!-- Page Header -->
+  <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-gray-900">Embodied Carbon Emissions</h1>
+    <p class="text-sm text-gray-600">Intensity measured by kgCO₂e/m²</p>
+  </div>
+
+  <!-- Filters -->
+  <div class="flex flex-wrap gap-4 p-6">
+    <div class="flex gap-2 items-center">
+      <span class="font-semibold">Type:</span>
+      <button class="bg-[#754043] text-white px-4 py-1 rounded-full">Refurbishment</button>
+      <button class="bg-[#754043] text-white px-4 py-1 rounded-full">New build</button>
+      <button class="bg-[#754043] text-white px-4 py-1 rounded-full">All</button>
+    </div>
+    <div class="flex gap-2 items-center">
+      <span class="font-semibold">Status:</span>
+      <button class="bg-[#754043] text-white px-4 py-1 rounded-full">Complete</button>
+      <button class="bg-white border border-gray-400 px-4 py-1 rounded-full">Estimate</button>
+    </div>
+  </div>
+
+  <!-- Key Legend -->
+  <div class="px-6 text-sm text-gray-700 mb-4">
+    <p><span class="inline-block w-6 h-0.5 bg-gray-400 mr-2"></span>600 kgCO₂e/m² – Embodied Carbon Target 2025</p>
+    <p><span class="inline-block w-6 h-0.5 border-t border-dashed border-gray-400 mr-2"></span>500 kgCO₂e/m² – Embodied Carbon Target 2030</p>
+  </div>
+
+  <!-- Bar Chart Container -->
+  <div class="max-w-full w-full bg-white rounded-lg shadow p-4 md:p-6 mx-6 mb-6">
+    <div class="flex justify-between items-start w-full">
+      <div class="flex-col items-center">
+        <div class="flex items-center mb-1">
+          <h5 class="text-xl font-bold leading-none text-gray-900 me-1">Carbon Emissions</h5>
+          <svg data-popover-target="chart-info" data-popover-placement="bottom" class="w-3.5 h-3.5 text-gray-500 hover:text-gray-900 cursor-pointer ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm0 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm1-5.034V12a1 1 0 0 1-2 0v-1.418a1 1 0 0 1 1.038-.999 1.436 1.436 0 0 0 1.488-1.441 1.501 1.501 0 1 0-3-.116.986.986 0 0 1-1.037.961 1 1 0 0 1-.96-1.037A3.5 3.5 0 1 1 11 11.466Z"/>
+          </svg>
+          <div data-popover id="chart-info" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72">
+            <div class="p-3 space-y-2">
+              <h3 class="font-semibold text-gray-900">Carbon Emissions</h3>
+              <p>Shows the embodied carbon emissions for different projects. Hover over bars to see exact values.</p>
+            </div>
+            <div data-popper-arrow></div>
+          </div>
+        </div>
+        <p class="text-base font-normal text-gray-500">Current projects</p>
+      </div>
+      <div class="flex justify-end items-center">
+        <button id="dropdownDefaultButton" data-dropdown-toggle="lastDaysdropdown" data-dropdown-placement="bottom" class="text-sm font-medium text-gray-500 hover:text-gray-900 inline-flex items-center px-3 py-2 rounded-lg bg-gray-50" type="button">
+          All Projects
+          <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+        <div id="lastDaysdropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+          <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Refurbishment</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">New Build</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">All Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart Canvas -->
+    <div class="py-6 h-80">
+      <canvas id="bar-chart"></canvas>
+    </div>
+
+    <div class="grid grid-cols-1 items-center border-gray-200 border-t justify-between mt-2">
+      <div class="flex justify-between items-center pt-5">
+        <button id="dropdownDefaultButton2" data-dropdown-toggle="lastDaysdropdown2" data-dropdown-placement="bottom" class="text-sm font-medium text-gray-500 hover:text-gray-900 inline-flex items-center px-4 py-2 rounded-lg" type="button">
+          <svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
+            <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+          </svg>
+          Actions
+        </button>
+        <a href="#" class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 hover:bg-gray-100 px-3 py-2">
+          Full Report
+          <svg class="w-2.5 h-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary KPIs -->
+  <div class="grid md:grid-cols-3 gap-8 px-6 py-12 bg-[#fcf7f6] text-center text-gray-800">
+    <!-- Carbon Footprint -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold">Managed portfolio carbon footprint</h3>
+      <p class="text-3xl font-bold mt-2">45,048 <span class="text-base font-normal text-gray-500">tCO₂e</span></p>
+      <p class="text-red-500 text-sm mt-1">↑ 16% from 2019</p>
+    </div>
+
+    <!-- Energy Intensity -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold">Managed portfolio energy intensity</h3>
+      <p class="text-3xl font-bold mt-2">123 <span class="text-base font-normal text-gray-500">kWh/m²</span></p>
+      <p class="text-green-600 text-sm mt-1">↓ 22% from 2019</p>
+    </div>
+
+    <!-- Energy Consumption -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold">Managed portfolio energy consumption</h3>
+      <p class="text-3xl font-bold mt-2">47,790,662 <span class="text-base font-normal text-gray-500">kWh</span></p>
+      <p class="text-green-600 text-sm mt-1">↓ 27% from 2019</p>
+    </div>
+  </div>
+
+  <!-- Historical Data Table (Optional) -->
+  <div class="px-6 pb-16">
+    <h2 class="text-2xl font-bold text-center mb-6">Yearly Comparison</h2>
+    <table class="min-w-full bg-white shadow rounded-lg overflow-hidden">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="px-4 py-2 text-left">Year</th>
+          <th class="px-4 py-2 text-center">Carbon Footprint</th>
+          <th class="px-4 py-2 text-center">Energy Intensity</th>
+          <th class="px-4 py-2 text-center">Energy Consumption</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 text-center">
+        <tr><td class="px-4 py-2 text-left">2022</td><td>45,048</td><td>123</td><td>47,790,662</td></tr>
+        <tr><td class="px-4 py-2 text-left">2021</td><td>14,111</td><td>128</td><td>49,324,077</td></tr>
+        <tr><td class="px-4 py-2 text-left">2020</td><td>32,813</td><td>135</td><td>48,784,205</td></tr>
+        <tr><td class="px-4 py-2 text-left">2019</td><td>38,673</td><td>157</td><td>65,198,706</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Testimonials Video Section -->
+  <section class="bg-[#f3eeed] px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">What Our Teams Say</h2>
+    <p class="text-gray-600 mb-6">Watch this short video to hear testimonials from our partners.</p>
+    <video controls class="mx-auto max-w-3xl w-full rounded-lg shadow-lg border border-gray-300">
+      <source src="/mnt/data/testimonials.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+  <!-- Grand Hotel Oslo Section -->
+<section class="relative bg-gray-900 text-white overflow-hidden">
+  <!-- Background Image (replace with your actual image) -->
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-50"></div>
+  
+  <div class="relative max-w-7xl mx-auto px-6 py-24 sm:py-32 lg:px-8">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+      <!-- Left Column - Text Content -->
+      <div class="mb-12 lg:mb-0">
+        <h2 class="text-5xl font-bold tracking-tight mb-2">
+          <span class="block">GRAND HOTEL</span>
+          <span class="block">OSLO 150 YEARS</span>
+        </h2>
+        
+        <div class="flex flex-wrap gap-4 my-6">
+          <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">INTERNATIONAL</span>
+          <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">INDIVIDUAL</span>
+          <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">BRAND ACTIVATION</span>
+        </div>
+        
+        <a href="#" class="group inline-flex items-center text-lg font-semibold mt-8">
+          READ MORE
+          <span class="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
+        </a>
+      </div>
+      
+      <!-- Right Column - Interactive Elements -->
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Anniversary Counter -->
+        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+          <p class="text-sm opacity-80">CELEBRATING</p>
+          <p class="text-4xl font-bold mt-2">150<span class="text-2xl">YEARS</span></p>
+        </div>
+        
+        <!-- Guest Book -->
+        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+          <p class="text-sm opacity-80">SIGN OUR</p>
+          <p class="text-3xl font-bold mt-2">GUEST BOOK</p>
+        </div>
+        
+        <!-- Photo Gallery -->
+        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 col-span-2">
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-sm opacity-80">EXPLORE</p>
+              <p class="text-3xl font-bold mt-2">HISTORY GALLERY</p>
+            </div>
+            <div class="flex space-x-2">
+              <button class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">←</button>
+              <button class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Smooth transitions for interactive elements */
+  .transition-all {
+    transition-property: all;
+  }
+  .duration-300 {
+    transition-duration: 300ms;
+  }
+  
+  /* Custom arrow animation */
+  @keyframes bounceRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+  }
+  .group:hover span {
+    animation: bounceRight 1s infinite;
+  }
+</style>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6 mt-10">
+    <p class="text-sm">© 2025 EcoAnalytics Platform. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Bar chart data for carbon emissions
+    const barChartData = {
+      labels: ['Project A', 'Project B', 'Project C', 'Project D', 'Project E', 'Project F'],
+      datasets: [
+        {
+          label: 'Embodied Carbon (kgCO₂e/m²)',
+          data: [580, 720, 650, 490, 530, 610],
+          backgroundColor: '#754043',
+          borderColor: '#5a3234',
+          borderWidth: 1,
+          borderRadius: 6,
+          hoverBackgroundColor: '#8a4c4f',
+        },
+        {
+          label: 'Target 2025',
+          data: [600, 600, 600, 600, 600, 600],
+          type: 'line',
+          borderColor: 'rgba(0, 0, 0, 0.5)',
+          borderWidth: 1,
+          borderDash: [5, 5],
+          pointRadius: 0,
+          fill: false
+        },
+        {
+          label: 'Target 2030',
+          data: [500, 500, 500, 500, 500, 500],
+          type: 'line',
+          borderColor: 'rgba(0, 0, 0, 0.3)',
+          borderWidth: 1,
+          borderDash: [5, 5],
+          pointRadius: 0,
+          fill: false
+        }
+      ]
+    };
+
+    // Bar chart config
+    const barChartConfig = {
+      type: 'bar',
+      data: barChartData,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {
+              usePointStyle: true,
+            }
+          },
+          tooltip: {
+            backgroundColor: '#1F2937',
+            titleColor: '#F9FAFB',
+            bodyColor: '#F9FAFB',
+            borderColor: '#4B5563',
+            borderWidth: 1,
+            padding: 12,
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
+                }
+                if (context.parsed.y !== null) {
+                  label += context.parsed.y + ' kgCO₂e/m²';
+                }
+                return label;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              display: false,
+            },
+            ticks: {
+              color: '#6B7280'
+            }
+          },
+          y: {
+            grid: {
+              color: '#E5E7EB',
+              drawBorder: false,
+            },
+            ticks: {
+              color: '#6B7280',
+              callback: function(value) {
+                return value + ' kgCO₂e/m²';
+              }
+            }
+          }
+        }
+      }
+    };
+
+    // Initialize chart when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      const barChartEl = document.getElementById('bar-chart');
+      if (barChartEl) {
+        new Chart(barChartEl, barChartConfig);
+      }
+    });
+  </script>
+
+  
+  <!-- Floating Pagination Bar -->
+<div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg border border-gray-200 rounded-full px-6 py-3">
+  <div class="flex items-center gap-6">
+    <!-- Navigation Links -->
+    <a href="index.html" class="text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">个</span> PRODUCTS
+    </a>
+    <a href="dashboards.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SOLUTIONS
+    </a>
+    <a href="comp_ourwork.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> RESOURCES
+    </a>
+    <a href="comp_reviews.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SERVICES
+    </a>
+
+    <!-- CTA Button -->
+    <a href="contact.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-full transition-colors">
+      BOOK A MEETING
+    </a>
+  </div>
+</div>
+</body>
+</html>

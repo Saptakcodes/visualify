@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-blue-100 min-h-screen text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-700">Contact Us</h1>
+      <a href="comp_index2.html" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm"><i class="fas fa-arrow-left mr-1"></i>Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="max-w-6xl mx-auto mt-10 px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- Contact Info -->
+      <div>
+        <h2 class="text-3xl font-bold mb-4 text-indigo-700">Get in Touch</h2>
+        <p class="text-gray-600 mb-6">Have any questions or want to work with us? Reach out using the form or the contact information below.</p>
+        
+        <div class="space-y-4 text-sm">
+          <div class="flex items-center"><i class="fas fa-envelope text-indigo-500 mr-3"></i> info@visualify.com</div>
+          <div class="flex items-center"><i class="fas fa-phone text-indigo-500 mr-3"></i> +91 98765 43210</div>
+          <div class="flex items-center"><i class="fas fa-map-marker-alt text-indigo-500 mr-3"></i> Kolkata, India - 700001</div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="mt-6 flex space-x-4">
+          <a href="#" class="text-indigo-500 hover:text-indigo-700"><i class="fab fa-facebook-f text-xl"></i></a>
+          <a href="#" class="text-indigo-500 hover:text-indigo-700"><i class="fab fa-twitter text-xl"></i></a>
+          <a href="#" class="text-indigo-500 hover:text-indigo-700"><i class="fab fa-linkedin-in text-xl"></i></a>
+          <a href="#" class="text-indigo-500 hover:text-indigo-700"><i class="fab fa-github text-xl"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="bg-white shadow-lg rounded-lg p-8 space-y-6" action="#" method="POST">
+        <div>
+          <label class="block text-sm font-medium mb-1" for="name">Full Name</label>
+          <input type="text" id="name" name="name" required class="w-full border border-gray-300 p-2 rounded focus:ring focus:ring-indigo-200" placeholder="Your Name"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="email">Email Address</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 p-2 rounded focus:ring focus:ring-indigo-200" placeholder="you@example.com"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full border border-gray-300 p-2 rounded focus:ring focus:ring-indigo-200" placeholder="Write your message..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition duration-200">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Map Embed Placeholder -->
+  <section class="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold mb-4 text-indigo-700">Our Location</h2>
+    <div class="aspect-w-16 aspect-h-9 w-full">
+      <iframe class="rounded shadow-md w-full h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.202246249813!2d88.3638951!3d22.5726467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a6ef5c5b7b%3A0xd36020a5e6f18f32!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1660214956233!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg border border-gray-200 rounded-full px-6 py-3">
+  <div class="flex items-center gap-6">
+    <!-- Navigation Links -->
+    <a href="index.html" class="text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">个</span> PRODUCTS
+    </a>
+    <a href="dashboards.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SOLUTIONS
+    </a>
+    <a href="comp_ourwork.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> RESOURCES
+    </a>
+    <a href="comp_reviews.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SERVICES
+    </a>
+
+    <!-- CTA Button -->
+    <a href="contact.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-full transition-colors">
+      BOOK A MEETING
+    </a>
+  </div>
+</div>
+
+  
+
+  <!-- Footer -->
+  <footer class="mt-20 bg-white text-center text-gray-500 text-sm py-4 shadow-inner">
+    &copy; 2025 Visualify. All rights reserved.
+  </footer>
+
+</body>
+</html>

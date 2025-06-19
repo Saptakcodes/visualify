@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login_style.css">
+     <!-- <script src="script1.js"></script> -->
+
+    <title>Login Page</title>
+</head>
+<body>
+    <form action="index.html" method="post" enctype="multipart/form-data">
+    <div class="login-container">
+        <h1 class="login"><u>Sign in</u></h1>
+        
+            <div class="input-box">
+                <input type="text" placeholder="Username" required minlength="4">
+                <i class='bx bxs-user'></i>
+            </div>
+        
+        
+            <div class="input-box">
+                <input type="password" placeholder="Password" required minlength="8" maxlength="25">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+        
+        
+            <div class="remember-forgot">
+            <label><input type="checkbox">
+                Remember Me?
+                <a href="#">Forgot Password</a>
+            </label>
+        </div>
+        <button class="login-btn" type="submit">
+            Sign in
+        </button>
+
+        <div class="register-link">
+            <p>Don't have an Account?<a href="comp_register.html" class="switch-signup">Register</a>
+            </p>
+        </div>
+        <div class="instead">
+            <p>----------------or----------------</p><br>
+            <button class="login-btn google-btn" type="submit"><i class='bx bxl-google'></i>     Sign in using Google</button>
+        </div>
+        </form>
+    </form>
+    </div>
+</body>
+</html>

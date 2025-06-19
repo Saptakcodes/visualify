@@ -1,0 +1,310 @@
+<!-- dashboard.html - EMBODIED CARBON EMISSIONS Dashboard -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embodied Carbon Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" id="mobile-menu-button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed -->
+                        <svg class="block h-6 w-6" id="menu-closed-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <!-- Icon when menu is open -->
+                        <svg class="hidden h-6 w-6" id="menu-open-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <!-- <div class="flex shrink-0 items-center">
+                        <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                    </div> -->
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="index.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
+                            <a href="dashboards.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboards</a>
+                            <a href="comp_ourwork.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Our Work</a>
+                            <a href="comp_reviews.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reviews</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">View notifications</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                        </svg>
+                    </button>
+
+                    <!-- Profile dropdown -->
+                    <div class="relative ml-3">
+                        <div>
+                            <button type="button" id="user-menu-button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-expanded="false" aria-haspopup="true">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Open user menu</span>
+                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </button>
+                        </div>
+
+                        <!-- Dropdown menu -->
+                        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" id="user-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            <a href="comp_profile.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                            <a href="comp_register.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Register</a>
+                            <a href="comp_login.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="index.html" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+                <a href="dashboards.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
+                <a href="comp_ourwork.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Our Work</a>
+                <a href="comp_reviews.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+  <div class="max-w-7xl mx-auto py-10 px-4">
+    <h1 class="text-4xl font-bold text-gray-800 mb-6">Embodied Carbon Emissions</h1>
+    <p class="text-lg text-gray-600 mb-8">Intensity measured by kgCO<sub>2</sub>e/m<sup>2</sup></p>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap gap-4 mb-10">
+      <div class="flex items-center gap-2">
+        <span class="font-semibold">Type:</span>
+        <button class="bg-red-800 text-white px-4 py-1 rounded-full">All</button>
+        <button class="border border-red-800 text-red-800 px-4 py-1 rounded-full">Refurbishment</button>
+        <button class="border border-red-800 text-red-800 px-4 py-1 rounded-full">New build</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="font-semibold">Status:</span>
+        <button class="bg-red-800 text-white px-4 py-1 rounded-full">Complete</button>
+        <button class="border border-red-800 text-red-800 px-4 py-1 rounded-full">Estimate</button>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="flex items-center gap-8 mb-6 text-sm text-gray-600">
+      <div class="flex items-center gap-2">
+        <span class="w-8 border-t border-dashed border-gray-600"></span>
+        500 kgCO₂e/m² - Target 2030
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-8 border-t border-gray-600"></span>
+        600 kgCO₂e/m² - Target 2025
+      </div>
+    </div>
+
+    <!-- Placeholder Bar Chart -->
+    <div class="w-full bg-white rounded-xl shadow p-6">
+      <canvas id="carbonChart" class="w-full"></canvas>
+    </div>
+
+    <!-- Portfolio Stats Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+      <!-- Carbon Footprint -->
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-semibold mb-1 text-gray-700">Managed portfolio carbon footprint</h3>
+        <p class="text-3xl font-bold text-gray-900 mb-1">45,048</p>
+        <p class="text-sm text-red-600">↑ 16% from 2019</p>
+        <canvas id="carbonFootprintChart" class="mt-4"></canvas>
+      </div>
+
+      <!-- Energy Intensity -->
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-semibold mb-1 text-gray-700">Managed portfolio energy intensity</h3>
+        <p class="text-3xl font-bold text-gray-900 mb-1">123</p>
+        <p class="text-sm text-green-600">↓ 22% from 2019</p>
+        <canvas id="energyIntensityChart" class="mt-4"></canvas>
+      </div>
+
+      <!-- Energy Consumption -->
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-semibold mb-1 text-gray-700">Managed portfolio energy consumption</h3>
+        <p class="text-3xl font-bold text-gray-900 mb-1">47,790,662</p>
+        <p class="text-sm text-green-600">↓ 27% from 2019</p>
+        <canvas id="energyConsumptionChart" class="mt-4"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const carbonChart = new Chart(document.getElementById('carbonChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Project A', 'Project B', 'Project C', 'Project D', 'Project E'],
+        datasets: [
+          {
+            label: 'Embodied Carbon (kgCO₂e/m²)',
+            data: [549, 875, 617, 506, 881],
+            backgroundColor: '#78333d'
+          },
+          {
+            label: 'Target 2025 (600)',
+            data: [600, 600, 600, 600, 600],
+            type: 'line',
+            borderColor: '#000',
+            borderWidth: 2,
+            pointRadius: 0,
+            fill: false
+          },
+          {
+            label: 'Target 2030 (500)',
+            data: [500, 500, 500, 500, 500],
+            type: 'line',
+            borderColor: '#aaa',
+            borderDash: [5, 5],
+            borderWidth: 2,
+            pointRadius: 0,
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'kgCO₂e/m²' } } }
+      }
+    });
+
+    // Dummy mini bar charts (Replace with real data)
+    const years = ['2019', '2020', '2021', '2022'];
+    const makeMiniChart = (id, data, color) => new Chart(document.getElementById(id), {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{ data, backgroundColor: color }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { display: false }, x: { display: false } },
+        responsive: true
+      }
+    });
+
+    makeMiniChart('carbonFootprintChart', [38673, 32813, 14111, 45048], '#78333d');
+    makeMiniChart('energyIntensityChart', [157, 135, 128, 123], '#78333d');
+    makeMiniChart('energyConsumptionChart', [65198706, 48784205, 49324077, 47790662], '#78333d');
+  </script>
+  <!-- Additional Charts Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+      <!-- Pie Chart: Emissions by Category -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-lg font-semibold mb-4 text-gray-700">Emissions Distribution by Category</h3>
+        <canvas id="categoryPieChart"></canvas>
+      </div>
+
+      <!-- Line Chart: Yearly Progress -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-lg font-semibold mb-4 text-gray-700">Yearly Emissions Progress</h3>
+        <canvas id="yearlyLineChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Existing charts...
+    // ... Your existing carbonChart, makeMiniChart, etc.
+
+    // New: Pie Chart (Emissions by Category)
+    new Chart(document.getElementById('categoryPieChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Construction', 'Operations', 'Materials', 'Transport'],
+        datasets: [{
+          data: [35, 25, 30, 10],
+          backgroundColor: ['#78333d', '#4b5563', '#9ca3af', '#d1d5db'],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    // New: Line Chart (Yearly Progress)
+    new Chart(document.getElementById('yearlyLineChart'), {
+      type: 'line',
+      data: {
+        labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+        datasets: [
+          {
+            label: 'Emissions (kgCO₂e/m²)',
+            data: [720, 680, 630, 590, 560, 530],
+            borderColor: '#78333d',
+            backgroundColor: 'rgba(120, 51, 61, 0.2)',
+            fill: true,
+            tension: 0.4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            mode: 'index',
+            intersect: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: 'kgCO₂e/m²'
+            }
+          }
+        }
+      }
+    });
+  </script>
+<!-- Floating Pagination Bar -->
+<div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg border border-gray-200 rounded-full px-6 py-3">
+  <div class="flex items-center gap-6">
+    <!-- Navigation Links -->
+    <a href="index.html" class="text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">个</span> PRODUCTS
+    </a>
+    <a href="dashboards.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SOLUTIONS
+    </a>
+    <a href="comp_ourwork.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> RESOURCES
+    </a>
+    <a href="comp_reviews.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SERVICES
+    </a>
+
+    <!-- CTA Button -->
+    <a href="contact.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-full transition-colors">
+      BOOK A MEETING
+    </a>
+  </div>
+</div>
+</body>
+
+</html>

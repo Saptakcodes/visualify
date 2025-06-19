@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Profile Header -->
+  <div class="bg-white shadow-sm py-8 px-6 lg:px-16">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Profile" class="w-32 h-32 rounded-full shadow-md ring-2 ring-indigo-500 transition hover:scale-105">
+      <div class="text-center md:text-left">
+        <h1 class="text-3xl font-bold text-indigo-600 mb-1">John Doe</h1>
+        <p class="text-gray-600">Senior Product Manager at Amzigo</p>
+        <p class="mt-2 text-sm text-gray-500">"Driven by data. Focused on impact."</p>
+        <button class="mt-4 px-5 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition shadow">
+          Edit Profile
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Cards -->
+  <div class="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 class="text-sm font-medium text-gray-500">Email</h3>
+      <p class="text-lg font-semibold text-gray-800 mt-1">john.doe@example.com</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 class="text-sm font-medium text-gray-500">Location</h3>
+      <p class="text-lg font-semibold text-gray-800 mt-1">New York, USA</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 class="text-sm font-medium text-gray-500">Phone</h3>
+      <p class="text-lg font-semibold text-gray-800 mt-1">+1 987 654 3210</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 class="text-sm font-medium text-gray-500">Role</h3>
+      <p class="text-lg font-semibold text-gray-800 mt-1">Admin</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 class="text-sm font-medium text-gray-500">Member Since</h3>
+      <p class="text-lg font-semibold text-gray-800 mt-1">March 2021</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 class="text-sm font-medium text-gray-500">Account Status</h3>
+      <span class="inline-block mt-1 px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">Active</span>
+    </div>
+  </div>
+
+  <!-- Bio Section -->
+  <div class="max-w-5xl mx-auto mt-10 px-6 pb-12">
+    <h2 class="text-xl font-semibold text-gray-800 mb-2">About</h2>
+    <p class="text-gray-600 leading-relaxed bg-white p-6 rounded-xl shadow">
+      John is a passionate product manager who has worked across various e-commerce platforms. He specializes in building scalable systems and cross-border solutions for Amazon sellers. When he's not managing products, he mentors startups and writes on product strategy.
+    </p>
+  </div>
+  <!-- Floating Pagination Bar -->
+<div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg border border-gray-200 rounded-full px-6 py-3">
+  <div class="flex items-center gap-6">
+    <!-- Navigation Links -->
+    <a href="index.html" class="text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">个</span> PRODUCTS
+    </a>
+    <a href="dashboards.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SOLUTIONS
+    </a>
+    <a href="comp_ourwork.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> RESOURCES
+    </a>
+    <a href="comp_reviews.html" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+      <span class="text-lg mr-1">十</span> SERVICES
+    </a>
+
+    <!-- CTA Button -->
+    <a href="contact.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-full transition-colors">
+      BOOK A MEETING
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
